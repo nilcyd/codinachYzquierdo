@@ -1,0 +1,112 @@
+*
+{
+  margin: 0px;
+  padding: 0px;
+  background-color: #434343;
+}
+
+div#slider
+{
+    height: 550px;
+    margin-top: 70px;
+    max-width: 1250px;
+    overflow: hidden;
+    width: 100%;
+}
+
+div#slider figure
+{
+  position: relative;
+  width: 600%;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  animation: 30s slidy infinite;
+}
+
+div#slider figure:hover
+{
+  animation-play-state: paused;
+}
+/*
+  Distribuir el contenido de la banda equitativamente.
+*/
+div#slider figure img
+{
+  bottom: 140px; /* After position: relative. For "film look" */
+  float: left;
+  height: auto;
+  position: relative;
+  width: 16.66%;
+}
+div#slider figure video
+{
+  width: 16.66%;
+  height: auto;
+  float:left;
+}
+
+
+/*
+  Animate the band
+*/
+@keyframes slidy
+{
+  0% { left: 0%; }
+  16% {left: 0%; }
+  20% {left: -100%; }
+  36% {left: -100%; }
+  40% {left: -200%; }
+  56% {left: -200%; }
+  60% {left: -300%; }
+  76% {left: -300%; }
+  80% {left: -400%; }
+  96% {left: -400%; }
+  100%{left: -500%;}
+}
+
+
+/*
+
+  Here starts the loading animation styles
+
+*/
+
+.progress
+{
+  color: lightgray;
+  height: 200px;
+  margin-left: 45%;
+  width: 200px;
+}
+
+.progress p
+{
+  font-family: Lato;
+  font-weight: 100;
+  text-align: center;
+}
+
+.progress svg:nth-child(2)
+{
+    height: 200px;
+    left: 45%;
+    position: absolute;
+    top: 0;
+    transform: rotate(-90deg);
+    width: 200px;
+}
+
+.progress svg:nth-child(2) > path
+{
+  fill: none;
+  stroke-width: 3;
+  stroke-dasharray: 629;
+  stroke: rgba(255, 255, 255, 0.9);
+  animation: load 5.5s infinite;
+}
+
+@keyframes load
+{
+  0% { stroke-dashoffset: 0; }
+}

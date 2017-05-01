@@ -1,0 +1,130 @@
+*
+{
+  margin: 0px;
+  padding: 0px;
+}
+
+/* SLIDES */
+ul.slides
+{
+  border: #333 solid 4px;
+  clear: both;
+  margin-left: 100px;
+  overflow: hidden;
+}
+
+ul.slides, ul.slides li, ul.slides a, ul.slides img
+{
+  height: 700px;
+  position: relative;
+  width: 1105px;
+ }
+
+ul.slides li
+{
+  position: absolute;
+  z-index: 50;
+}
+
+ul.slides li:target
+{
+  z-index: 100;
+  animation: 1s slide 1;
+}
+
+ul.slides li:not(:target)
+{
+  animation: 1s noTarget 1;
+}
+
+/* THUMBNAILS */
+ul.thumbs
+{
+    position: absolute;
+    top: 0px;
+    z-index: 100;
+}
+
+ul.thumbs li
+{
+  margin-bottom: 10px;
+  margin-right: 9px;
+}
+
+ul.thumbs a
+{
+  border: 4px solid transparent;
+  color: #515151;
+  display: block;
+  font: bold 12px/25px Arial, sans-serif;
+  height: 100px;
+  position: relative;
+  text-decoration: none;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, .25), inset 1px 1px 0px rgba(0, 0, 0, .15);
+  width: 80px;
+}
+
+ul.thumbs img
+{
+  border: #333 solid 4px;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+ul.thumbs li a span {
+    left: -100px;
+    position: absolute;
+}
+
+ul.thumbs li a:hover span
+{
+  bottom: -30px;
+  display: block;
+  height: 25px;
+  left: -22px;
+  position: absolute;
+  text-align: center;
+  width: 100px;
+  z-index: 101;
+  border-radius: 3px;
+	-webkit-box-shadow: 0px 1px 0px rgba(0,0,0, .4);
+  -moz-box-shadow: 0px 1px 0px rgba(0,0,0, .4);
+  box-shadow: 0px 1px 0px rgba(0,0,0, .4);
+  background: #fff; /* older browsers */
+  background: -webkit-linear-gradient(top, #fff, 0%, #bcbcbc, 100%);
+  background: -moz-linear-gradient(top, #fff, 0%, #bcbcbc, 100%);
+  background: -o-linear-gradient(top, #fff, 0%, #bcbcbc, 100%);
+  background: -ms-linear-gradient(top, #fff, 0%, #bcbcbc, 100%);
+  background: linear-gradient(top, #fff, 0%, #bcbcbc, 100%);
+}
+
+ul.thumbs li a:hover span:before
+{
+	  width: 0px;
+	  height: 0px;
+	  border-bottom: 5px solid #fff;
+	  border-left: 5px solid transparent;
+	  border-right: 5px solid transparent;
+	  content: '';
+	  position: absolute;
+	  top: -5px;
+	  left: 44px;
+}
+
+ul.thumbs li:first-child a:hover span { left: -3px; }
+
+ul.thumbs li:first-child a:hover span:before { left: 25px; }
+
+/* CSS3 Animation */
+@-webkit-keyframes 'slide'
+{
+  0%   { left: -1000px; }
+  100% { left: 0px; }
+}
+
+@keyframes 'noTarget'
+{
+  0%   { z-index: 75; }
+  100% { z-index: 75;}
+}
